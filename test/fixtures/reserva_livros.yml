@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  livro: one
+  status: 1
+  checkin: 2022-07-12
+  checkout: 2022-07-12
+
+two:
+  user: two
+  livro: two
+  status: 1
+  checkin: 2022-07-12
+  checkout: 2022-07-12
