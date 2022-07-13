@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :nome, :email, presence: true
+  validates :nome, :email, :password, :kind, presence: true
 
   has_many :livros
   has_many :livro_quantities

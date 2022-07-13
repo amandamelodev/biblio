@@ -2,6 +2,6 @@ class ReservaLivro < ApplicationRecord
   belongs_to :user
   belongs_to :livro
 
-  has_one :historico_user
+  has_many :historico_user
 
 end
