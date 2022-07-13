@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="box">
+    <h2> Change your password</h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token %>
+    <%= render "users/shared/error_messages", resource: resource %>
+    <div class="field-login">
+      <%= f.label :password, "New password (minimum 6 characters)", class: "field-pass"%>
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "form-fields" %>
+      <%= f.label :password_confirmation, "Confirm new password", class: "field-pass" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-fields" %>
+    </div>
+    <div class="actions button">
+      <%= f.submit "Change my password", :class => "btn" %>
+    </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>

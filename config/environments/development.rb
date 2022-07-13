@@ -1,3 +1,5 @@
+require "active_support/core_ext/integer/time"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -12,10 +14,14 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  # Enable server timing
+  config.server_timing = true
+  
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
+    config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -35,12 +41,30 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = 
+  { host: 'localhost:3000' }
+  
+  config.action_mailer.default charset: 'utf-8'
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.perform_deliveries = true
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
-  config.active_record.migration_error = :page_load
+  config.active_support.disallowed_deprecation = :raise
 
+  #Tell Active Support which deprecation messages to disallow.
+  config.active_support.disallowed_deprecation_warnings = []
+  
+  # Raise exceptions for disallowed deprecations.
+  config.active_support.disallowed_deprecation = :raise
+
+  # Raise an error on page load if there are pending migrations.
+  config.active_record.migration_error = :page_load
+  
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 

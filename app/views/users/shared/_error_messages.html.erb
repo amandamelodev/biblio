@@ -1,0 +1,8 @@
+<% if resource.errors.any? %>
+  <div class="alert">
+    <% resource.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+    <button type="button" class="close" onclick="this.parentElement.style.display='none';">&times;</button>
+  </div>
+<% end %>

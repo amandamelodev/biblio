@@ -1,0 +1,211 @@
+body {
+  background: #262626;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 1 - start login page */
+
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.box {
+  justify-content: center;
+  background: #383838;
+  height: 400px;
+  width: 450px;
+  border-radius: 6px;
+  box-shadow: #262626 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.login-title {
+  margin-top: 50px;
+}
+
+.field-login {
+  position: relative;
+  margin: 0 66px 0 66px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-fields {
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 6px;
+  padding: 0px 7px 0px 7px;
+  background: #565656;
+  color: white;
+  box-shadow: #262626 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.check-links {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 320px;
+  padding-bottom: 20px;
+}
+
+.checkbox {
+  font-size: 14px;
+}
+
+.links {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover {
+  color: #479dff;
+}
+
+.button { 
+  position: relative;
+  justify-content: center;
+}
+
+.btn {
+  background: #479DFE;
+  border-color: #479DFE;
+  width: 150px;
+  height: 45px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.btn:active {
+  background: #1687ff;
+}
+
+.alert {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+  background: #479DFE;
+  max-width: 100%;
+  line-height: 50px;
+}
+
+.close {
+  position: relative;
+  align-self: center;
+  height: 25px;
+  color: black;
+  background: #8ec5ff;
+  border: #2f7fd6;
+  border-radius: 5px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+  border-style: solid;
+  background: #2f7fd6;
+}
+
+/* end login page */
+
+/* 2 - start reset password css */
+
+.container-pass {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.box-pass {
+  justify-content: center;
+  background: #383838;
+  height: 300px;
+  width: 450px;
+  border-radius: 6px;
+  box-shadow: #262626 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.forgot-title {
+  margin-top: 50px;
+}
+
+.field-login-pass {
+  position: relative;
+  margin: 0 66px 0 66px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.email-pass {
+  display: flex;
+  padding-bottom: 15px;
+}
+
+.email-field-pass {
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 7px 0px 7px;
+  background: #565656;
+  color: white;
+  box-shadow: #262626 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.button-pass {
+  position: relative;
+  padding: 20px;
+}
+
+.btn-pass {
+  background: #479DFE;
+  border-color: #479DFE;
+  width: 170px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-pass:active {
+  background: #1687ff;
+}
+
+.links-pass {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.links-pass:hover {
+  color: #479dff;
+}
+
+/* 2 - end reset password page */

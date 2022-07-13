@@ -1,0 +1,26 @@
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>Login</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field-login">
+        <%= f.label :email, class: "field-pass" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-fields" %>
+        <%= f.label :password, class: "field-pass" %>
+        <%= f.password_field :password, autocomplete: "current-password", :class => "form-fields" %>
+      </div>
+      <div class="check-links">
+        <div class="checkbox">
+          <%= f.label :remember_me %>
+        </div>
+        <% end %>
+        <div class="links">
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+      <div class="actions button">
+        <%= f.submit "Log in", :class => "btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>

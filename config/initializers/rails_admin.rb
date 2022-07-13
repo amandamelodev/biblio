@@ -1,9 +1,15 @@
 RailsAdmin.config do |config|
+
+  config.model 'User' do
+    list do
+      field :nome
+      field :email
+      field :cargo
+    end
+  end
+  
   config.asset_source = :sprockets
 
-  ### Popular gems integration
-
- 
  config.authenticate_with do
  warden.authenticate! scope: :user
   end
