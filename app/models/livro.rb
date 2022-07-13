@@ -1,4 +1,9 @@
 class Livro < ApplicationRecord
-  enum status: [:active, :inactive]
+  enum status: [:disponivel, :indisponivel]
   has_many :livro_quantities
+
+  def title
+    titulo
+  end
+
 end

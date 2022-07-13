@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_13_055325) do
   create_table "historico_users", force: :cascade do |t|
     t.integer "reserva_livro_id"
     t.datetime "created_at", precision: nil, null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

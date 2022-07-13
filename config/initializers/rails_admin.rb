@@ -4,10 +4,32 @@ RailsAdmin.config do |config|
     list do
       field :nome
       field :email
-      field :cargo
+      field :telefone
+      field :kind
+      field :status
     end
   end
-  
+  config.model 'Livro' do
+    list do
+      field :titulo
+      field :autores
+      field :editora
+      field :descricao
+      field :banner
+    end
+  end
+
+  config.model 'Reserva_livro' do
+    list do
+      field :user
+      field :livro
+      field :status
+      field :chekin
+      field :chekout
+    end
+  end
+
+
   config.asset_source = :sprockets
 
  config.authenticate_with do
