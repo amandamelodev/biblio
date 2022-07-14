@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :email, :password, presence: true
+  validates :email, :telefone, :password, presence: true
 
   extend Devise::Models
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable #:omniauthable

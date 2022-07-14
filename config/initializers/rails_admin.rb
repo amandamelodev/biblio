@@ -5,10 +5,14 @@ RailsAdmin.config do |config|
       field :nome
       field :email
       field :telefone
-      field :kind
-      field :status
     end
+    edit do
+      field :nome
+      field :telefone
+      field :email
+      field :password
     end
+  end
   config.model 'Livro' do
     list do
       field :titulo
@@ -16,38 +20,41 @@ RailsAdmin.config do |config|
       field :editora
       field :descricao
       field :banner
-      field :quantidade
     end
   end
-end
-  config.model 'Reserva_livro' do
+  config.model 'ReservaLivro' do
     list do
       field :user
       field :livro
-      field :chekin
-      field :chekout
+      field :checkin
+      field :checkout
     end
-
-    config.model 'Historico_Users' do
-      list do
+    create do
+      field :user
+      field :livro
+      field :checkin
+      field :checkout
+    end
+  end
+    config.model 'HistoricoUsers' do
+      edit do
         field :user
         field :livro
         field :status
         field :chekin
-        field :chekout
+        field :checkout
       end
   end
 
-
   config.asset_source = :sprockets
 
- config.authenticate_with do
- warden.authenticate! scope: :user
+  config.authenticate_with do
+    warden.authenticate! scope: :user
   end
- config.current_user_method(&:current_user)
+  config.current_user_method(&:current_user)
 
   ## == CancanCan ==
-  config.authorize_with :cancancan
+  #config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -75,5 +82,4 @@ end
     # history_index
     # history_show
   end
-end
 end
