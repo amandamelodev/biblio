@@ -1,6 +1,6 @@
 class Livro < ApplicationRecord
   enum status: [:disponivel, :indisponivel]
-  has_many :livro_quantities
+  validates :titulo, presence: true
 
   def title
     titulo

@@ -8,7 +8,7 @@ RailsAdmin.config do |config|
       field :kind
       field :status
     end
-  end
+    end
   config.model 'Livro' do
     list do
       field :titulo
@@ -16,17 +16,26 @@ RailsAdmin.config do |config|
       field :editora
       field :descricao
       field :banner
+      field :quantidade
     end
   end
-
+end
   config.model 'Reserva_livro' do
     list do
       field :user
       field :livro
-      field :status
       field :chekin
       field :chekout
     end
+
+    config.model 'Historico_Users' do
+      list do
+        field :user
+        field :livro
+        field :status
+        field :chekin
+        field :chekout
+      end
   end
 
 
@@ -66,4 +75,5 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+end
 end

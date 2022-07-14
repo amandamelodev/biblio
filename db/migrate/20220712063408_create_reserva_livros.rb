@@ -6,7 +6,7 @@ class CreateReservaLivros < ActiveRecord::Migration[5.2]
       t.integer :status
       t.date :checkin
       t.date :checkout
-
+    
       t.timestamps
     end
   end
