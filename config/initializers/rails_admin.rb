@@ -1,51 +1,4 @@
 RailsAdmin.config do |config|
-
-  config.model 'User' do
-    list do
-      field :nome
-      field :email
-      field :telefone
-    end
-    edit do
-      field :nome
-      field :telefone
-      field :email
-      field :password
-    end
-  end
-  config.model 'Livro' do
-    list do
-      field :titulo
-      field :autores
-      field :editora
-      field :descricao
-      field :banner
-    end
-  end
-  config.model 'ReservaLivro' do
-    list do
-      field :user
-      field :livro
-      field :checkin
-      field :checkout
-    end
-    create do
-      field :user
-      field :livro
-      field :checkin
-      field :checkout
-    end
-  end
-    config.model 'HistoricoUsers' do
-      edit do
-        field :user
-        field :livro
-        field :status
-        field :chekin
-        field :checkout
-      end
-  end
-
   config.asset_source = :sprockets
 
   config.authenticate_with do
@@ -54,7 +7,23 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
 
   ## == CancanCan ==
-  #config.authorize_with :cancancan
+  config.authorize_with :cancancan
+
+
+  config.model 'User' do
+    list do
+      field :nome
+      field :telefone 
+      field :email 
+    end
+  end
+
+  config.model 'DisponibilidadeLivros' do
+    list do
+      field :quantidade 
+      field :livro
+    end
+  end
 
   ## == Pundit ==
   # config.authorize_with :pundit

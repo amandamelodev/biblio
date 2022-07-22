@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   validates :email, :telefone, :password, presence: true
 
+  enum role: [:admin, :leitor]
+
   extend Devise::Models
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable #:omniauthable
 

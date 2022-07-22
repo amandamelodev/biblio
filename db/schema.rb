@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_14_145705) do
+  create_table "disponibilidade_livros", force: :cascade do |t|
+    t.integer "quantidade"
+    t.integer "livro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["livro_id"], name: "index_disponibilidade_livros_on_livro_id"
+  end
+
   create_table "historico_users", force: :cascade do |t|
     t.integer "reserva_livro_id"
     t.datetime "created_at", precision: nil, null: false
@@ -18,19 +26,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
     t.index ["reserva_livro_id"], name: "index_historico_users_on_reserva_livro_id"
   end
 
-  create_table "livro_quantities", force: :cascade do |t|
-    t.integer "livro_id"
-    t.integer "quantidade"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["livro_id"], name: "index_livro_quantities_on_livro_id"
-  end
-
   create_table "livros", force: :cascade do |t|
-    t.string "titulo"
-    t.string "autores"
+    t.string "titulo", null: false
+    t.string "autores", null: false
     t.string "editora"
-    t.string "descricao"
+    t.string "descricao", null: false
     t.string "banner"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
     t.integer "user_id"
     t.integer "livro_id"
     t.integer "status"
-    t.date "checkin"
-    t.date "checkout"
+    t.datetime "checkin", precision: nil, null: false
+    t.datetime "checkout", precision: nil, null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["livro_id"], name: "index_reserva_livros_on_livro_id"
@@ -49,8 +49,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "nome"
-    t.string "telefone"
+    t.string "nome", null: false
+    t.string "telefone", null: false
+    t.integer "role"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "email", default: "", null: false
@@ -62,8 +63,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_123539) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "disponibilidade_livros", "livros"
   add_foreign_key "historico_users", "reserva_livros"
-  add_foreign_key "livro_quantities", "livros"
   add_foreign_key "reserva_livros", "livros"
   add_foreign_key "reserva_livros", "users"
 end
