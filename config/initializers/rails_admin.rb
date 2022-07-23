@@ -19,12 +19,18 @@ RailsAdmin.config do |config|
   end
 
   config.model 'DisponibilidadeLivros' do
-    list do
-      field :quantidade 
-      field :livro
-    end
+   visible false
   end
 
+  config.model 'ListaReserva' do
+    list do
+      field :user
+      field :livro
+      field :status
+      field :checkin
+      field :checkout
+    end
+  end
   ## == Pundit ==
   # config.authorize_with :pundit
 

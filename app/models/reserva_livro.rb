@@ -3,6 +3,6 @@ class ReservaLivro < ApplicationRecord
   belongs_to :livro
   validates :checkin, :checkout, presence: true
 
-  enum status: [:aberto, :concluido]
+  enum status: [:Aberto, :Concluido]
 
 end

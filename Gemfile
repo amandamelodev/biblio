@@ -67,3 +67,5 @@ gem 'sassc-rails'
 
 gem 'sendgrid-ruby', "~> 6.6"
 gem 'cancancan'
+	
+gem 'carrierwave'

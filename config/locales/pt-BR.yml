@@ -153,14 +153,13 @@ pt-BR:
         skip_header_help: Não incluir o cabeçalho
         default_col_sep: ","
         col_sep: Separador de coluna
-        col_sep_help: Deixe em branco para utilizar o padrão ('%{value}') # value is default_col_sep
-        #ate aqui PT-BR padrão do rails
+        col_sep_help: Deixe em branco para utilizar o padrão ('%{value}') 
     formats:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
-    date: 
-      month_names:
+  date: 
+    month_names:
       - Janeiro
       - Fevereiro
       - Março
@@ -173,7 +172,7 @@ pt-BR:
       - Outubro
       - Novembro
       - Dezembro
-      order:
+    order:
       - :day
       - :month
       - :year
